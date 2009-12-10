@@ -4,13 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     version="2.5">
-  <display-name>Wave Censor Bot</display-name>
+  <display-name>Wave Maenad Bot</display-name>
   <servlet>
-    <servlet-name>cb</servlet-name>
-    <servlet-class>censorbot.servlet</servlet-class>
+    <servlet-name>mb</servlet-name>
+    <servlet-class>maenad.servlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>cb</servlet-name>
+    <servlet-name>mb</servlet-name>
     <url-pattern>/_wave/robot/jsonrpc</url-pattern>
   </servlet-mapping>
 </web-app>

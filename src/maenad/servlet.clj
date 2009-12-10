@@ -1,4 +1,4 @@
-(ns censorbot.servlet
+(ns maenad.servlet
   (:gen-class :extends com.google.wave.api.AbstractRobotServlet)
   (:import
     [com.google.appengine.api.users UserServiceFactory]
@@ -17,7 +17,7 @@
 (defn welcome-if-new
   [bundle wavelet]
   (if (.wasSelfAdded bundle) 
-    (append-blip wavelet (str "Hello. I'm a children's playground censorbot! No swearing please"))))
+    (append-blip wavelet "Bob says howdy?")))
 
 (defn blip-submitted-events
   [events]
