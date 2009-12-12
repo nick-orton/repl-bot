@@ -4,13 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     version="2.5">
-  <display-name>Wave Maenad Bot</display-name>
+  <display-name>REPL Wave Bot</display-name>
   <servlet>
-    <servlet-name>mb</servlet-name>
-    <servlet-class>maenad.servlet</servlet-class>
+    <servlet-name>rb</servlet-name>
+    <servlet-class>replbot.servlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>mb</servlet-name>
+    <servlet-name>rb</servlet-name>
     <url-pattern>/_wave/robot/jsonrpc</url-pattern>
   </servlet-mapping>
 </web-app>

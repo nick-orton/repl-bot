@@ -1,4 +1,4 @@
-<project name="maenad" basedir="." default="compile">
+<project name="replbot" basedir="." default="compile">
  
   <property environment="env" />  
   <property name="sdk.dir" location="/home/no/src/java/lib/appengine-java-sdk-1.2.8" />
@@ -39,7 +39,7 @@
     <java fork="true" classname="clojure.lang.Compile" classpathref="project.classpath" failonerror="true">
       <classpath path="${src.dir}" />
       <sysproperty key="clojure.compile.path" value="${classes.dir}" />
-      <arg value="maenad.servlet" />
+      <arg value="replbot.servlet" />
     </java>
   </target>
   

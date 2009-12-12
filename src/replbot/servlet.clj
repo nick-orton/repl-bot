@@ -1,4 +1,4 @@
-(ns maenad.servlet
+(ns replbot.servlet
   (:gen-class :extends com.google.wave.api.AbstractRobotServlet)
   (:import
     [com.google.appengine.api.users UserServiceFactory]
