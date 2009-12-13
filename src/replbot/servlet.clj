@@ -14,8 +14,10 @@
   (let [document (.getDocument blip)
         text (.getText document)]
     (.append document 
-      (try (str "\n evaluates to: " (eval (read-string text))) 
-        (catch Exception e (.getStackTrace e))))))
+      (str "\n evaluates to: " 
+           (try 
+             (eval (read-string text)) 
+             (catch Exception e (.getStackTrace e)))))))
 
 (defn -processEvents
   [this bundle]
