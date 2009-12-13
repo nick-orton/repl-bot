@@ -13,4 +13,13 @@
     <servlet-name>rb</servlet-name>
     <url-pattern>/_wave/robot/jsonrpc</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>profile</servlet-name>
+    <servlet-class>replbot.profile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>profile</servlet-name>
+    <url-pattern>/_wave/robot/profile</url-pattern>
+  </servlet-mapping>
+
 </web-app>

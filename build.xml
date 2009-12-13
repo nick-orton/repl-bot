@@ -36,14 +36,17 @@
   
   <target name="compile" depends="clean,init">
     <echo message="${ant.java.version}" />
-    <java fork="true" classname="clojure.lang.Compile" classpathref="project.classpath" failonerror="true">
+    <java fork="true" classname="clojure.lang.Compile" 
+          classpathref="project.classpath" failonerror="true">
       <classpath path="${src.dir}" />
       <sysproperty key="clojure.compile.path" value="${classes.dir}" />
       <arg value="replbot.servlet" />
+      <arg value="replbot.profile" />
     </java>
   </target>
   
-  <target name="devserver" description="run local dev appserver"  depends="compile">
+  <target name="devserver" description="run local dev appserver"  
+          depends="compile">
     <dev_appserver war="war" />
   </target>
   
