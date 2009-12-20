@@ -1,5 +1,6 @@
 (ns replbot.servlet
   (:gen-class :extends com.google.wave.api.AbstractRobotServlet)
+  (:use clojure.stacktrace)
   (:import
     [com.google.appengine.api.users UserServiceFactory]
     [com.google.wave.api Blip Event EventType 
@@ -9,15 +10,17 @@
   [events]
   (filter (fn [e] (= (EventType/BLIP_SUBMITTED) (.getType e))) events))
 
+(defn evaluate [text] 
+  (str "\n evaluates to: " 
+           (try 
+             (eval (read-string text)) 
+             (catch Exception e (root-cause e)))))
+
 (defn process-blip
   [blip]
   (let [document (.getDocument blip)
         text (.getText document)]
-    (.append document 
-      (str "\n evaluates to: " 
-           (try 
-             (eval (read-string text)) 
-             (catch Exception e (.getStackTrace e)))))))
+    (.append document (evaluate text))))
 
 (defn -processEvents
   [this bundle]
